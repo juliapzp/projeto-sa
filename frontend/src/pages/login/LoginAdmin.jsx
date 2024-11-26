@@ -90,7 +90,7 @@ const LoginAdmin = () => {
             required
           />
           <br />
-          <button type="submit" className="botao-login">Entrar</button>
+          <button type="submit" className="botao-logar">Entrar</button>
         </form>
         {error && <p className="error-message">{error}</p>}
         {success && <p className="success-message">Login realizado com sucesso! Redirecionando...</p>}
