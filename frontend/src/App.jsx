@@ -1,7 +1,5 @@
 import React from 'react';
 import Home from './pages/home/Home.jsx';
-import HomeClienteLogado from './pages/home/HomeClienteLogado.jsx';
-import HomeAdminLogado from './pages/home/HomeAdminLogado.jsx';
 import Login from './pages/login/Login.jsx';
 import Cadastro from './pages/cadastro/CadastroCliente.jsx';
 import LoginCliente from './pages/login/LoginCliente.jsx';
@@ -17,8 +15,6 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/ClienteLogado" element={<HomeClienteLogado />} />
-        <Route path="/AdminLogado" element={<HomeAdminLogado />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/Cadastro" element={<Cadastro />} />
         <Route path="/LoginCliente" element={<LoginCliente />} />
