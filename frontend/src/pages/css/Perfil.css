@@ -1,0 +1,67 @@
+.tela-perfil {
+    background-color: #F1F4F5;
+    height: 150vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.perfil2 img {
+    width: 250px;
+    margin-bottom: 30px;
+    margin-top: -50px;
+}
+
+.tela-perfil input {
+  width: 400px;
+  height: 40px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.tela-perfil input[type="email"]:focus {
+  border-color: #aaa;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.botao-enviar {
+  width: 300px;
+  height: 40px;
+  background-image: linear-gradient(to right, #8f2955, #e42b41, #d34e3a);
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  border-radius: 80px;
+  text-decoration: none;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.tela-perfil p {
+    margin-top: 30px;
+}
+
+.dados {
+    align-items: center;
+    background-color: #ffffff;
+    width: 600px;
+    height: 500px;
+    border-radius: 30px;
+    box-shadow: rgba(107, 107, 107, 0.2) 0px 7px 29px 0px;
+    border: 1px solid #ccc;
+    margin: 0 auto;
+  }
+
+.perfil {
+    justify-content: space-around;
+    display: flex;
+    width: 15%;
+
+}
+
+
+

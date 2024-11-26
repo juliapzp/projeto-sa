@@ -1,0 +1,16 @@
+CREATE TABLE clientes (
+  id SERIAL PRIMARY KEY,
+  email VARCHAR(255) NOT NULL UNIQUE,
+  cpf VARCHAR(14) NOT NULL,
+  senha TEXT NOT NULL
+);
+
+CREATE TABLE admin (
+  id SERIAL PRIMARY KEY,
+  usuario VARCHAR(255) NOT NULL UNIQUE,
+  senha TEXT NOT NULL
+);
+
+INSERT INTO admin (id, usuario, senha)
+VALUES (1, '123456', '123456');
+
