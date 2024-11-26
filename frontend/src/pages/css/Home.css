@@ -11,7 +11,7 @@ body {
 .bem-vindo {
     margin-top: 80px;
     display: block;
-    color: #ffff;
+    color: #fff;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -31,7 +31,9 @@ body {
 
 .abaixo {
     background-color: #ffffff;
-    height: 120vh;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -47,8 +49,7 @@ body {
     cursor: pointer;
     width: 250px;
     height: 100px;
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 20px;
     transition: background-color 0.5s;
 }
 
@@ -56,128 +57,73 @@ body {
     background-color: #e42b4123;
 }
 
-.search-container {
-    position: relative;
-}
-
-.search-container input[type="search"] {
-    padding: 10px;
-    font-size: 16px;
-    border: solid 0.5px #b4b4b4;
-    border-radius: 15px;
-    box-shadow: rgba(107, 107, 107, 0.2) 0px 7px 29px 0px;
-    padding-right: 300px;
-}
-
-.search-container input[type="search"]:focus {
-    box-shadow: rgba(105, 105, 105, 0.404) 0px 7px 29px 0px;
-    outline: none;
-}
-
-.search-container input[type="search"]::placeholder {
-    color: #999;
-}
-
-.search-container .search-icon {
-    position: absolute;
-    right: 15px;
-    top: 2px;
-    font-size: 16px;
-    cursor: pointer;
-    color: #E42B41;
-}
-
-.div-filtros {
-    align-items: center;
-    justify-content: space-around;
-    display: flex;
-    background-color: #ffffff;
-    width: 570px;
-    height: 60px;
-    border-radius: 20px;
-    box-shadow: rgba(107, 107, 107, 0.2) 0px 7px 29px 0px;
-    border: solid 0.5px #b4b4b4;
-}
-
-.div-filtro-barra {
-    width: 75%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+.duvidas {
     margin: auto;
-    margin-bottom: 100px;
+    display: flex;
+    flex-wrap: wrap; /* Ajusta os itens em várias linhas */
+    justify-content: center; /* Centraliza os itens */
+    gap: 30px; /* Espaçamento uniforme entre os itens */
     margin-top: 50px;
 }
 
 .duvida {
     background-color: #ffffff;
-    width: 450px;
-    border-radius: 30px;
+    width: 400px;
+    border-radius: 20px;
     box-shadow: rgba(107, 107, 107, 0.2) 0px 7px 29px 0px;
     border: 1px solid #ccc;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .duvida h2 {
     font-weight: bold;
-    margin-top: 30px;
+    font-size: 20px;
+    margin-bottom: 10px;
 }
 
 .duvida p {
-    margin: 50px;
-}
-
-
-.duvidas {
-    margin: auto;
-    align-items: center;
-    justify-content: space-around;
-    width: 70%;
-    display: flex;
-    margin-top: 70px;
+    flex: 1; 
+    font-size: 18px;
+    line-height: 1.5;
 }
 
 .status {
     display: flex;
     align-items: center;
-    margin: 10px;
     justify-content: space-between;
-    height: 80px;
+    height: auto; 
+    margin-top: 20px;
+    padding-top: 10px;
 }
 
-.status-respondido {
+.status-respondido,
+.status-nao-respondido {
     display: flex;
     align-items: center;
-    margin-left: 20px;
 }
 
 .status-respondido h3 {
     color: #189524;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 18px;
     margin-left: 10px;
 }
 
-.mostrar-resposta h4 {
-    font-size: 20px;
+.status-nao-respondido h3 {
+    color: #FC0000;
     font-weight: bold;
-    margin-right: 10px;
+    font-size: 18px;
+    margin-left: 10px;
 }
 
-
-.feliz {
-    height: 35px;
-    color: #189524;
-    margin-bottom: 10px;
+.feliz,
+.triste {
+    height: 30px;
 }
 
-.seta-baixo {
-    height: 25px;
-}
-
-.mostrar-resposta {
-    display: flex;
-    margin-right: 20px;
-}
 
 .triste {
     height: 35px;
@@ -185,31 +131,29 @@ body {
     margin-bottom: 10px;
 }
 
-.status-nao-respondido {
-    display: flex;
-    align-items: center;
-    margin-left: 20px;
-    height: 50px;
+.feliz {
+    height: 35px;
+    color: #189524;
+    margin-bottom: 10px;
 }
 
-.status-nao-respondido h3 {
-    color: #FC0000;
+.mostrar-resposta {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: #070707;
     font-weight: bold;
-    font-size: 25px;
+    margin-top: 10px;
+}
+
+
+
+.mostrar-resposta h4 {
+    font-size: 130%;
+}
+
+.seta-baixo {
+    height: 25px;
     margin-left: 10px;
 }
 
-.botoes-duvidas {
-    margin: auto;
-    align-items: center;
-    justify-content: space-around;
-    width: 40%;
-    display: flex;
-    margin-top: 70px;
-}
-
-.botoes-duvidas {
-    display: flex;
-    flex-direction: column; 
-  }
-  
