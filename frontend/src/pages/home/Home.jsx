@@ -5,7 +5,11 @@ import img1 from "../../assets/img1.png";
 import imgperfil from "../../assets/imgperfil.png";
 import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch, faFaceSmile, faFaceSadTear, faCircleArrowDown } from "@fortawesome/free-solid-svg-icons";
+import {
+  faFaceSmile,
+  faFaceSadTear,
+  faCircleArrowDown,
+} from "@fortawesome/free-solid-svg-icons";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
@@ -56,7 +60,7 @@ function Home() {
 
   return (
     <div className="tela-home">
-      {userType === "cliente" ? (
+      {userType === "cliente" ? ( // Exibindo conteúdo para cliente logado
         <div className="tela-home">
           <div className="navbar">
             <div className="logo">
@@ -85,6 +89,7 @@ function Home() {
               </button>
               {showForm && (
                 <div className="form-duvida">
+                  <br /><br /><br />
                   <form onSubmit={handleSubmit}>
                     <div>
                       <label className="titulinho">Assunto:</label>
@@ -117,22 +122,144 @@ function Home() {
                         onChange={(e) => setDuvida(e.target.value)}
                         required
                       ></textarea>
+                      <br /><br /><br />
                     </div>
-
+                
                     <button type="submit">Enviar Dúvida</button>
                   </form>
                 </div>
               )}
-
+<br /><br />
               <button className="botao-duvida">
                 <span className="gradient">Suas dúvidas</span>
               </button>
+
+              <div className="duvidas">
+                <div className="duvida">
+                  <h2 className="gradient">Exemplo</h2>
+                  <p>
+                    Exemplo Exemplo Exemplo Exemplo Exemplo Exemplo Exemplo
+                    Exemplo Exemplo Exemplo Exemplo Exemplo Exemplo Exemplo
+                    Exemplo Exemplo Exemplo Exemplo Exemplo Exemplo
+                  </p>
+                  <div className="status">
+                    <div className="status-respondido">
+                      <FontAwesomeIcon
+                        icon={faFaceSmile}
+                        className="feliz"
+                      />
+                      <h3>Respondido</h3>
+                    </div>
+                    <div className="mostrar-resposta">
+                      <h4>Ver Resposta</h4>
+                      <FontAwesomeIcon
+                        icon={faCircleArrowDown}
+                        className="seta-baixo"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="duvida">
+                  <h2 className="gradient">Exemplo</h2>
+                  <p>
+                    Exemplo Exemplo Exemplo Exemplo Exemplo Exemplo Exemplo
+                    Exemplo Exemplo Exemplo Exemplo Exemplo Exemplo Exemplo
+                    Exemplo Exemplo Exemplo Exemplo Exemplo Exemplo
+                  </p>
+                  <div className="status">
+                    <div className="status-nao-respondido">
+                      <FontAwesomeIcon
+                        icon={faFaceSadTear}
+                        className="triste"
+                      />
+                      <h3>Não Respondido</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      ) : (
+      ) : userType === 'admin' ? (
+        // Exibindo conteúdo para admin logado
         <div className="tela-home">
-          {/* Conteúdo para usuários não logados */}
+          <div className="navbar">
+            <div className="logo">
+              <Link to="/AdminLogado">
+                <img src={logo} alt="logo" />
+              </Link>
+            </div>
+            <div className="perfil">
+              <button className="sair" onClick={handleLogout}> {/* Modificado para usar onClick */}
+                <h2>Sair</h2>
+              </button>
+            </div>
+          </div>
+
+          <div className="bem-vindo">
+            <h1>Bem-vindo(a) ao Suporte da ACSIV</h1>
+            <img src={img1} alt="Img1" />
+          </div>
+          <div className="abaixo">
+            <div className="botoes-duvidas">
+              <button className="botao-duvida" >
+                <span className="gradient">Suas Respostas</span>
+              </button>
+            </div>
+            <h1 className="gradient">DÚVIDAS</h1>
+            <div className="div-filtro-barra">
+              <div className="div-filtros">
+                {/* Filtros */}
+              </div>
+              <div className="div-barra">
+                <span className="search-container">
+                  <input
+                    type="search"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    placeholder="Pesquisar..."
+                  />
+                  <FontAwesomeIcon icon={faSearch} className="search-icon" />
+                </span>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      ) : (
+        // Exibindo conteúdo para usuário não logado
+        <div className="tela-home">
+          <div className="navbar">
+            <div className="logo">
+              <Link to="/">
+                <img src={logo} alt="logo" />
+              </Link>
+            </div>
+            <div className="nav-buttons">
+              <Link to="/Login">
+                <button className="botao-entrar">Entrar</button>
+              </Link>
+              <Link to="/Cadastro">
+                <button className="botao-cadastrar">
+                  <span className="gradient">Cadastrar</span>
+                </button>
+              </Link>
+            </div>
+          </div>
+          <div className="bem-vindo">
+            <h1>Bem-vindo(a) ao Suporte da ACSIV</h1>
+            <img src={img1} alt="Img1" />
+          </div>
+          <div className="abaixo">
+            <div className="botoes-duvidas">
+              <Link to="/Login">
+                <button className="botao-duvida">
+                  <span className="gradient">Tire sua dúvida</span>
+                </button>
+              </Link>
+            </div>
+          </div>
         </div>
       )}
     </div>
