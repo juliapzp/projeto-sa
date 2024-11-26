@@ -31,7 +31,7 @@ CREATE TABLE resposta (
 -- Dados de Exemplo
 
 INSERT INTO admin (id, usuario, senha)
-VALUES (1, 'admin123', 'senha123');
+VALUES (1, '123456', '123456');
 
 INSERT INTO clientes (id, email, cpf, senha)
 VALUES (1, 'cliente@example.com', '123.456.789-00', 'cliente123');
@@ -41,3 +41,8 @@ VALUES ('Tenho uma dúvida sobre o produto X', 'Produto X', 1);
 
 INSERT INTO resposta (descricao_resposta, id_duvida, id_admin)
 VALUES ('A dúvida foi resolvida. O produto X está disponível.', 1, 1);
+
+SELECT * FROM cliente
+SELECT * FROM admin
+SELECT * FROM duvida
+SELECT * FROM resposta
