@@ -9,6 +9,7 @@ import {
   faFaceSmile,
   faFaceSadTear,
   faCircleArrowDown,
+  faSearch
 } from "@fortawesome/free-solid-svg-icons";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
